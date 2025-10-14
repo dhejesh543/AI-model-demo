@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en">
+  
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>open ai </title>
+  <link rel="stylesheet" href="front.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    
+    <button id="loginBtn" onclick="openDialog2()">Login</button>
+    <button id="signBtn" onclick="openDialog()">Signup </button>
+    <button id="aboutBtn"  onclick="openDialog3()">About</button>
+  </nav>
+   <div class="overlay" id="overlay">
+    <div class="dialog">
+      <input type="text"  class="first"placeholder="First Name"><br>
+      <input type="text" class="second"placeholder="Last Name"><br>
+      <input type="email" class="fourth"placeholder="Email"><br>
+      <input  type="password" class="fifth"placeholder="Password"><br>
+      <input type="password" class="sixth"placeholder="Confirm Password"><br><br>
+      <center><button id="up" class="up" onclick="submitSignup()">Sign Up</button></center></div></div>
+  <div class="overlay2" id="overlay2">
+    <div class="dialog2">
+      <input type="email" class="ov21" placeholder="Email"><br>
+      <input type="password" class="ov22" placeholder="Password"><br><br>
+      <center><button id="up2" class="up2" onclick="submitLogin()">Login</button></center><br><br>
+      <center><p>Forgot?</p></center>
+    </div>
+  </div>
+  <div class ="overlay3" id="overlay3">
+    <div class="dialog3">
+      <h1>About Us</h1>
+      <p>
+        Welcome to our site! We aim to provide the fastest way to Know the information. Our platform is designed to be user-friendly, secure, and always up-to-date with the latest trends. Join us and experience the difference!
+      </p><br>
+      <h2 style="text-align:center">Our Team</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="/w3images/team1.jpg" alt="dhejesh">
+            <div class="container">
+              <h2>dhejesh.V</h2>
+              <p class="title">Creator</p>
+              <p>whats app broo!!!!!!!! looking about me!!! dont worry i will take care of it i will complete the ASAP </p>
+              <p>dhejeshv03@gamil.com</p>
+              <p><button class="button" onclick="closeDialog3()">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="content">
+    <h1 id="intro">Know Your Rights !!!!!!!!</h1>
+  </div>
+  </div>
+  <div class="bottom-section">
+
+   
+    <input type="text" class="input-box" placeholder="Type here...">
+    <button id="generateBtn">Generate</button><br><br>
+<h1 id="lotext">login to see your account </h1><br><br>
+
+
+
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

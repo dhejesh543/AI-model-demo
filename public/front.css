@@ -1,0 +1,364 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #151d25, #4b6cb7);
+  color: white;
+  overflow: hidden;
+}
+
+
+.navbar {
+    display: flex;
+    gap: 50px;
+    padding: 20px 0;
+    font-size: 28px; /* Increased font size */
+    justify-content: flex-end; /* Move navbar items to the right */
+}
+
+.navbar button {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Blue text */
+    transition: 0.3s;
+    font-size: 44px;
+    padding: 24px 56px;
+    background: #4b6cb7;}
+.navbar button {
+    font-size: 20px; /* Smaller buttons */
+    color: #ffffff;
+    padding: 8px 18px;
+    background: transparent;
+    border-radius: 16px;
+    border: none;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.content {
+  text-align: center;
+}
+.content h1 {
+  font-size: 18px;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Input Box (hidden initially) */
+.input-box {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: white;
+  color: black;
+
+  /* Start hidden on the left */
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: transform 1.9s ease, opacity 1.9s ease;
+}
+
+/* Show Input Animation */
+.input-box.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Generate Button */
+#generateBtn {
+    background: #4b6cb7; /* Match background gradient color */
+    color: #fff;
+    font-size: 22px;     /* Smaller font size */
+    padding: 12px 28px;  /* Smaller padding */
+    border-radius: 18px; /* Slightly less rounded corners */
+   
+}
+#generateBtn:hover {
+  background: linear-gradient(135deg, #2c3e50, #4b6cb7);
+}
+.bottom-section {
+    flex-direction: column;
+}
+
+#generateBtn {
+    margin-top: 15px;
+    align-self: center;
+}
+.overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      
+    }
+    .overlay.show {
+      display: flex;
+  transform: translateX(0);
+  opacity: 1;}
+
+
+
+  .overlay input::placeholder {
+      text-align: center;   
+    }
+
+    .dialog {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+      
+    }
+    .dialog.show {
+  transform: translateX(0);
+  opacity: 1;}
+
+    .dialog {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+      transform: translateX(-120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+    }
+    .dialog.show {
+  transform: translateX(0);
+  opacity: 1;}
+
+    .dialog input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+      transform: translateX(-120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+      
+}
+.dialog input.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+    
+
+    .dialog input::placeholder {
+      color: #ddd;
+      transform: translateX(-120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+      align-items: center;
+      text-align:left;
+    }
+    .close-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff4b5c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      
+    }
+#up{
+display: flex; justify-content: center;
+  text-decoration: none;
+    color: rgb(255, 255, 255); /* Blue text */
+    transition: 0.3s;
+    font-size: 20px;
+    padding: 5px 20px;
+    background: #4b6cb7;
+    border-radius: 16px;
+    border: none;
+    color: #fff;
+
+}
+.overlay2 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(-120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+    }
+    .overlay2.show {
+  transform: translateX(0);
+  opacity: 1;}
+
+    /* Dialog Box */
+    .dialog2 {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+      transform: translateX(120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+    }
+    .dialog2.show {
+  transform: translateX(0);
+  opacity: 1;}
+
+    .dialog2 input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+      transform: translateX(-120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+      
+}
+.dialog2 input.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+    
+
+    .dialog2 input::placeholder {
+      color: #ddd;
+      transform: translateX(-120);
+       opacity: 1;
+      transition: transform 1.9s ease, opacity 1.9s ease;
+    }
+
+    
+#up2{
+display: flex; justify-content: center;
+  text-decoration: none;
+    color: rgb(255, 255, 255); /* Blue text */
+    transition: 0.3s;
+    font-size: 20px;
+    padding: 5px 20px;
+    background: #4b6cb7;
+    border-radius: 16px;
+    border: none;
+    color: #fff;
+
+}
+/* About Section Styles */
+.overlay3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.overlay3.show {
+  display: flex;
+}
+.dialog3 {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 600px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  text-align: center;
+}
+.dialog3 h1 {
+  color: #4b6cb7;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.dialog3 p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.column {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 12px;
+}
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 16px;
+  text-align: center;
+}
+.card img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.container h2 {
+  color: #4b6cb7;
+  margin: 8px 0;
+}
+.container .title {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.button {
+  background: #4b6cb7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 8px;
+}
